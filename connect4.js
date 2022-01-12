@@ -76,7 +76,7 @@ function findSpotForCol(x) {
 
 function placeInTable(y, x) {
 	// TODO: make a div and insert into correct table cell
-	const piece = document.createElement("td");
+	const piece = document.createElement("div");
 	const boardTd = document.getElementById(`${y}-${x}`);
 	piece.classList.add("piece", `p${currPlayer}`);
 	boardTd.append(piece);
