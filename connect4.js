@@ -32,7 +32,7 @@ function makeHtmlBoard() {
 	// TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
 	const htmlBoard = document.getElementById("board");
 	// TODO: add comment for this code
-	// Creates the first row of the htmlBoard table, sets the id to column-top, and adds a click event
+	// Creates the first row of the htmlBoard table, sets the id to column-top, and makes it clickable to add a piece
 	const top = document.createElement("tr");
 	top.setAttribute("id", "column-top");
 	top.addEventListener("click", handleClick);
@@ -46,7 +46,7 @@ function makeHtmlBoard() {
 	htmlBoard.append(top);
 
 	// TODO: add comment for this code
-	// Creates HEIGHT number of rows for the board, with each row having WIDTH td appended to them.
+	// Creates HEIGHT number of rows for the board, with each row having WIDTH number of td's appended to them.
 	// Each td will have an id, that represents their coordinate location on the board "y-x".
 	for (let y = 0; y < HEIGHT; y++) {
 		const row = document.createElement("tr");
