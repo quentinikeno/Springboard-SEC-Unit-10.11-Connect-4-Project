@@ -17,11 +17,11 @@ const board = []; // array of rows, each row is array of cells  (board[y][x])
 
 function makeBoard() {
 	// TODO: set "board" to empty HEIGHT x WIDTH matrix array
-	let row = [];
-	for (let i = 0; i < WIDTH; i++) {
-		row.push(null);
-	}
 	for (let j = 0; j < HEIGHT; j++) {
+		const row = [];
+		for (let i = 0; i < WIDTH; i++) {
+			row.push(null);
+		}
 		board.push(row);
 	}
 }
@@ -97,6 +97,8 @@ function handleClick(evt) {
 	// place piece in board and add to HTML table
 	// TODO: add line to update in-memory board
 	placeInTable(y, x);
+	console.log(board[y][x]);
+	board[y][x] = currPlayer;
 
 	// check for win
 	if (checkForWin()) {
