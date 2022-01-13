@@ -52,6 +52,9 @@ function makeHtmlBoard() {
 		const row = document.createElement("tr");
 		for (let x = 0; x < WIDTH; x++) {
 			const cell = document.createElement("td");
+			const emptyCircle = document.createElement("div");
+			emptyCircle.classList.add("emptyCircle");
+			cell.append(emptyCircle);
 			cell.setAttribute("id", `${y}-${x}`);
 			row.append(cell);
 		}
@@ -141,7 +144,10 @@ function checkForWin() {
 	}
 
 	// TODO: read and understand this code. Add comments to help you.
-
+	//  Use a for loop to check each cell, i.e. every (y,x) coordinate, for a win
+	//  For each cell, there will be four ways to win, horizontally, vertically, diagonlly to the right, and diagonally to the left
+	//  Create an array of four cells to check each type of win with the _win function
+	// - returns true if there is a win
 	for (let y = 0; y < HEIGHT; y++) {
 		for (let x = 0; x < WIDTH; x++) {
 			const horiz = [
